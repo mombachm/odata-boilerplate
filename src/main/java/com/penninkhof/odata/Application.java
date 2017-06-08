@@ -11,7 +11,8 @@ import org.springframework.context.annotation.Bean;
 
 import com.penninkhof.odata.entities.Member;
 import com.penninkhof.odata.repository.MemberRepository;
-
+import com.penninkhof.odata.entities.Task;
+import com.penninkhof.odata.repository.TaskRepository;
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
@@ -27,21 +28,13 @@ public class Application extends SpringBootServletInitializer {
 	}
 
 	@Bean
-	public CommandLineRunner demo(final MemberRepository repository) {
+	public CommandLineRunner demo(final TaskRepository repository) {
 	    return new CommandLineRunner() {
 			public void run(String... args) throws Exception {
 				if (repository.count() == 0) {
-					log.info("Database is still empty. Adding some sample records");
-					repository.save(new Member(1, "Jack", "Bauer"));
-					repository.save(new Member(2, "Chloe", "O'Brian"));
-					repository.save(new Member(3, "Kim", "Bauer"));
-					repository.save(new Member(4, "David", "Palmer"));
-					repository.save(new Member(5, "Michelle", "Dessler"));
+					repository.save(new Task(1, "Task Teste", "Teste descrição"));
 				}
 	        }
 	    };
 	}
-	
-	
-
 }

@@ -23,7 +23,7 @@
 									inset="false"
 									growing="true"
 									growingScrollToLoad="true"
-									items="{/Members}"
+									items="{/Tasks}"
 									updateFinished="onUpdateFinished">
 									<headerToolbar>
 										<Toolbar id="tableToolbar">
@@ -55,20 +55,20 @@
 								<Text text="This example is based on smart controls. The layout and functionality of the table and filter are controlled by annotations in metadata.xml" />
 								<smartFilterBar:SmartFilterBar 
 									id="smartFilterBar" 
-									entityType="Member" >
+									entityType="Task" >
 									<smartFilterBar:controlConfiguration>
 										<smartFilterBar:ControlConfiguration key="FirstName" visibleInAdvancedArea="true" />
 										<smartFilterBar:ControlConfiguration key="LastName" visibleInAdvancedArea="true" />
 									</smartFilterBar:controlConfiguration>
 								</smartFilterBar:SmartFilterBar>
 								<smartTable:SmartTable
-									entitySet="Members"
+									entitySet="Tasks"
 									smartFilterId="smartFilterBar"
 									tableType="ResponsiveTable"
 									useExportToExcel="true"
 									useVariantManagement="false"
 									useTablePersonalisation="true"
-									header="Members"
+									header="Tasks"
 									showRowCount="true"
 									enableAutoBinding="true"
 									demandPopin="true"/>
